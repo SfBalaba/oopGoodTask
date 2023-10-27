@@ -19,4 +19,5 @@ public interface Person {
      * @param destination место назначения
      */
     void walk(Position destination);
+
 }
