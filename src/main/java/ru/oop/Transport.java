@@ -9,5 +9,11 @@ public interface Transport extends Positioned {
 
     Position getPosition();
 
-    void go(Person person, Position destination);
+    /**
+     * перемещает человека в ближайшее к точке назначения место остановки
+     * @param person человек
+     * @param destination место назначения
+     */
+    public void go(Person person, Position destination) {
+    }
 }

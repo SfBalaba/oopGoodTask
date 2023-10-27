@@ -13,20 +13,16 @@ public class Bus implements Transport{
     }
 
     /**
-     * @return текущее местоположение автобуса
+        * @return текушую позицию автобуса
      */
     @Override
     public Position getPosition() {
         return null;
     }
 
-    /**
-     * перемещает человека в ближайшую точку к точке назначения, в которой может остановитсья
-     * @param person человек
-     * @param destination точка назначения
-     */
     @Override
     public void go(Person person, Position destination) {
 
     }
+
 }

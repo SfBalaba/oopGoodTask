@@ -1,6 +1,10 @@
 package ru.oop;
 
 
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
+
 /**
  * <b>Задача 2:</b><br>
  * Добраться человеку до заданного места.<br>
@@ -38,11 +42,18 @@ public class Main {
      * Переехать из текущего места в заданную точку
      * на любом, заранее определённом транспорте
      */
-    public static void moveTo(Person person, Position destination, Transport transport) {
-        Position transportPosition = transport.getPosition();
-        person.walk(transportPosition);
-        transport.go(person, destination);
-        person.walk(destination);
+
+    public static void moveTo(Person person, Position destination) {
+        List<Transport> route = Arrays.asList(new Car(person), new Bus("43", person), new Bus("50", person));
+        Iterator<Transport> iterRoute = route.iterator();
+        while(iterRoute.hasNext()){
+            Transport currentTransport = iterRoute.next();
+            Position currentTransportPosition = currentTransport.getPosition();
+            if(currentTransportPosition != person.getPosition()){
+                person.walk(currentTransportPosition);
+                currentTransport.go(person, destination);
+            }
+        }
         assert person.getPosition() == destination;
     }
 }
