@@ -4,13 +4,20 @@ package ru.oop;
  * Класс автобуса, который также как и любой вид
  * транспорта может переместить человека в заданную точку
  */
-public class Bus extends Transport{
+public class Bus implements Transport{
+    private String number;
+    private Person person;
+    public Bus(String number, Person person) {
+        this.number = number;
+        this.person = person;
+    }
+
     /**
      * @return текущее местоположение автобуса
      */
     @Override
     public Position getPosition() {
-        return super.getPosition();
+        return null;
     }
 
     /**
@@ -20,6 +27,6 @@ public class Bus extends Transport{
      */
     @Override
     public void go(Person person, Position destination) {
-        super.go(person, destination);
+
     }
 }

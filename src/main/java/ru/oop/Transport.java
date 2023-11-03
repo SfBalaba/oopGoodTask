@@ -1,17 +1,13 @@
 package ru.oop;
 
 /**
- * <p>класс транспорта, который перемещает человека</p>
- * <p>в точку назначения</p>
- * <p>или ближайщую точку к месту назначения,</p>
- * <p>где может остановиться данный транспорт</p>
+ * интерфейс транспорта
+ * транспорт может переместить человека в точку назначения
+ * нельзя создать экземпляр абстрактного транспорта
  */
-public abstract class Transport implements Positioned{
-    @Override
-    public Position getPosition() {
-        return null;
-    }
+public interface Transport extends Positioned {
 
-    public void go(Person person, Position destination) {
-    }
+    Position getPosition();
+
+    void go(Person person, Position destination);
 }
