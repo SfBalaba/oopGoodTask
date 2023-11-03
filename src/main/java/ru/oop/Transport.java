@@ -7,6 +7,9 @@ package ru.oop;
  */
 public interface Transport extends Positioned {
 
+    /**
+     * {@inheritDoc}
+     */
     Position getPosition();
 
     /**
@@ -14,6 +17,5 @@ public interface Transport extends Positioned {
      * @param person человек
      * @param destination место назначения
      */
-    public void go(Person person, Position destination) {
-    }
+    public void go(Person person, Position destination);
 }

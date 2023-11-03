@@ -5,7 +5,14 @@ package ru.oop;
  * транспорта может переместить человека в заданную точку
  */
 public class Bus implements Transport{
+    /**
+     * номер автобуса
+     */
     private String number;
+    /**
+     * человек, который поедет в автобусе
+     * человек внутри автобуса
+     */
     private Person person;
     public Bus(String number, Person person) {
         this.number = number;
@@ -20,6 +27,11 @@ public class Bus implements Transport{
         return null;
     }
 
+    /**
+     * преемещается вместе с человеком в пункт назначения
+     * @param person      человек
+     * @param destination место назначения
+     */
     @Override
     public void go(Person person, Position destination) {
 

@@ -41,18 +41,18 @@ public class Main {
     /**
      * Переехать из текущего места в заданную точку
      * на любом, заранее определённом транспорте
+     * @param person человек
+     * @param destination пункт назначения
+     * @param route маршрут, который представлен списком транспорта, на котором поедет человек
      */
-
-    public static void moveTo(Person person, Position destination) {
-        List<Transport> route = Arrays.asList(new Car(person), new Bus("43", person), new Bus("50", person));
+    public static void moveTo(Person person, Position destination, List<Transport> route ) {
+//        List<Transport> route = Arrays.asList(new Car(person), new Bus("43", person), new Bus("50", person));
         Iterator<Transport> iterRoute = route.iterator();
         while(iterRoute.hasNext()){
             Transport currentTransport = iterRoute.next();
             Position currentTransportPosition = currentTransport.getPosition();
-            if(currentTransportPosition != person.getPosition()){
-                person.walk(currentTransportPosition);
-                currentTransport.go(person, destination);
-            }
+            person.walk(currentTransportPosition);
+            currentTransport.go(person, destination);
         }
         assert person.getPosition() == destination;
     }
